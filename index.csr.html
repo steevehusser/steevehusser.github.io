@@ -35,6 +35,19 @@
 
 <body ngcm="">
   <app-root></app-root>
+  <script>
+    // GitHub Pages SPA redirect handling
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
 <script src="polyfills-B6TNHZQ6.js" type="module"></script><script src="main-AQPEMMWB.js" type="module"></script></body>
 
 </html>
