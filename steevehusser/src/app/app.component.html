@@ -22,34 +22,36 @@
 
   <!-- Header Section -->
   <header class="hero-section">
-    <div class="hero-content">
+    <div class="hero-content hero-content-row">
       <div class="hero-avatar-halo">
         <div class="avatar-halo"></div>
         <div class="avatar-circle-3d">
           <span class="avatar-text-3d">SH</span>
         </div>
       </div>
-      <h1 class="hero-title-sobre">{{ title }}</h1>
-      <h2 class="hero-subtitle">Développeur Full Stack</h2>
-      <p class="hero-slogan">Passionné par l'innovation, prêt à relever de nouveaux défis</p>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">Années d'expérience</span>
+      <div class="hero-text-content">
+        <h1 class="hero-title-sobre">{{ title }}</h1>
+        <h2 class="hero-subtitle">Développeur Full Stack</h2>
+        <p class="hero-slogan">Passionné par l'innovation, prêt à relever de nouveaux défis</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Années d'expérience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projets réalisés</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Satisfaction client</span>
+          </div>
         </div>
-        <div class="stat-item">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Projets réalisés</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Satisfaction client</span>
-        </div>
+        <button class="cta-button-neon" (click)="scrollToSection('contact')">
+          Collaborons ensemble
+          <span class="button-arrow">→</span>
+        </button>
       </div>
-      <button class="cta-button-neon" (click)="scrollToSection('contact')">
-        Collaborons ensemble
-        <span class="button-arrow">→</span>
-      </button>
     </div>
     <div class="hero-particles">
       <div class="particle" *ngFor="let p of particles"></div>
