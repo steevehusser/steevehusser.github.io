@@ -59,6 +59,8 @@ export class AppComponent implements OnInit {
     contact: false
   };
 
+  particles = Array.from({ length: 18 });
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit() {

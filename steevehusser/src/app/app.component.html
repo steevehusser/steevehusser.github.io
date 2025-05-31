@@ -23,12 +23,13 @@
   <!-- Header Section -->
   <header class="hero-section">
     <div class="hero-content">
-      <div class="hero-avatar">
-        <div class="avatar-circle">
-          <span class="avatar-text">SH</span>
+      <div class="hero-avatar-halo">
+        <div class="avatar-halo"></div>
+        <div class="avatar-circle-3d">
+          <span class="avatar-text-3d">SH</span>
         </div>
       </div>
-      <h1 class="hero-title">{{ title }}</h1>
+      <h1 class="hero-title-sobre">{{ title }}</h1>
       <h2 class="hero-subtitle">Développeur Full Stack</h2>
       <p class="hero-slogan">Passionné par l'innovation, prêt à relever de nouveaux défis</p>
       <div class="hero-stats">
@@ -45,15 +46,13 @@
           <span class="stat-label">Satisfaction client</span>
         </div>
       </div>
-      <button class="cta-button" (click)="scrollToSection('contact')">
+      <button class="cta-button-neon" (click)="scrollToSection('contact')">
         Collaborons ensemble
         <span class="button-arrow">→</span>
       </button>
     </div>
-    <div class="hero-background">
-      <div class="floating-element" style="top: 20%; left: 10%;">💻</div>
-      <div class="floating-element" style="top: 60%; right: 15%;">🚀</div>
-      <div class="floating-element" style="top: 40%; left: 80%;">⚡</div>
+    <div class="hero-particles">
+      <div class="particle" *ngFor="let p of particles"></div>
     </div>
   </header>
 
