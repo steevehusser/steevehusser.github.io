@@ -18,6 +18,9 @@
       <a (click)="scrollToSection('projects')" class="nav-link">Projets</a>
       <a (click)="scrollToSection('contact')" class="nav-link">Contact</a>
     </div>
+    <button class="dark-toggle" (click)="toggleDarkMode()">
+      {{ isDarkMode ? '☀️' : '🌙' }}
+    </button>
   </nav>
 
   <!-- Header Section -->
@@ -31,7 +34,7 @@
       </div>
       <div class="hero-text-content">
         <h1 class="hero-title-sobre">{{ title }}</h1>
-        <h2 class="hero-subtitle">Développeur Full Stack</h2>
+        <h2 class="hero-subtitle">{{ subtitle }}</h2>
         <p class="hero-slogan">Passionné par l'innovation, prêt à relever de nouveaux défis</p>
         <div class="hero-stats">
           <div class="stat-item">

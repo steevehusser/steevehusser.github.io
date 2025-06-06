@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'Steeve Husser';
+  subtitle = '';
+  private fullSubtitle = 'Développeur Full Stack';
+  isDarkMode = false;
 
   // Contact form
   contactForm = {
@@ -66,6 +69,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.checkVisibility();
+      this.initTheme();
+      this.startTypingEffect();
     }
   }
 
@@ -121,6 +126,38 @@ export class AppComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       window.open('https://github.com/steevehusser', '_blank');
     }
+  }
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    if (isPlatformBrowser(this.platformId)) {
+      const body = document.body;
+      body.classList.toggle('dark-mode', this.isDarkMode);
+      localStorage.setItem('darkMode', this.isDarkMode ? '1' : '0');
+    }
+  }
+
+  initTheme() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isDarkMode = localStorage.getItem('darkMode') === '1';
+      document.body.classList.toggle('dark-mode', this.isDarkMode);
+    }
+  }
+
+  startTypingEffect() {
+    if (!isPlatformBrowser(this.platformId)) {
+      this.subtitle = this.fullSubtitle;
+      return;
+    }
+
+    let index = 0;
+    const interval = setInterval(() => {
+      this.subtitle += this.fullSubtitle.charAt(index);
+      index++;
+      if (index === this.fullSubtitle.length) {
+        clearInterval(interval);
+      }
+    }, 100);
   }
 
   sendEmail() {

@@ -113,6 +113,20 @@
             }
         }
     }
+
+    .dark-toggle {
+        margin-left: 1rem;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: var(--text-dark);
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 }
 
 // Hero Section avec animations et particules
