@@ -1,5 +1,5 @@
 <div class="portfolio-container">
-  <app-navbar [title]="title" (navigate)="scrollToSection($event)"></app-navbar>
+  <app-navbar [title]="title" [active]="activeSection" (navigate)="scrollToSection($event)"></app-navbar>
   <app-hero [title]="title" [particles]="particles" (contact)="scrollToSection('contact')"></app-hero>
   <app-about [visible]="isVisible.about"></app-about>
   <app-skills [skills]="skills" [visible]="isVisible.skills"></app-skills>

@@ -22,6 +22,7 @@
     --text-dark: #2d3748;
     --text-warm: #4a5568;
     --text-light: #718096;
+    --bg-white: #ffffff;
     --bg-warm: #fef5e7;
     --bg-glass: rgba(255, 255, 255, 0.25);
     --bg-card: rgba(255, 255, 255, 0.9);
@@ -34,6 +35,16 @@
     --border-radius-md: 20px;
     --border-radius-lg: 30px;
     --border-radius-xl: 50px;
+}
+
+/* Variables pour le mode sombre */
+body.dark-theme {
+    --bg-white: #1a202c;
+    --bg-warm: #2d3748;
+    --text-dark: #f7fafc;
+    --text-warm: #e2e8f0;
+    --bg-glass: rgba(45, 55, 72, 0.25);
+    --bg-card: rgba(45, 55, 72, 0.9);
 }
 
 // Reset global amélioré

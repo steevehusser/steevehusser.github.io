@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,5 +16,13 @@ export class HeroComponent {
 
   scrollToContact() {
     this.contact.emit();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    const hero = document.querySelector('.hero-section') as HTMLElement;
+    if (hero) {
+      hero.style.backgroundPositionY = `${-window.pageYOffset * 0.3}px`;
+    }
   }
 }

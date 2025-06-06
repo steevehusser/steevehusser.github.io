@@ -62,9 +62,28 @@
                 transition: width 0.3s ease;
             }
 
-            &:hover::after {
+            &:hover::after,
+            &.active::after {
                 width: 80%;
             }
+
+            &.active {
+                color: var(--warm-pink);
+            }
+        }
+    }
+
+    .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.4rem;
+        margin-left: 1rem;
+        color: var(--text-dark);
+        transition: color 0.3s;
+
+        &:hover {
+            color: var(--warm-pink);
         }
     }
 }

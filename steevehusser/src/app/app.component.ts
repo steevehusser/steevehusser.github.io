@@ -72,6 +72,8 @@ export class AppComponent implements OnInit {
     contact: false
   };
 
+  activeSection = '';
+
   particles = Array.from({ length: 18 });
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
@@ -95,14 +97,19 @@ export class AppComponent implements OnInit {
     }
 
     const sections = ['about', 'skills', 'experience', 'projects', 'contact'];
+    let current = this.activeSection;
     sections.forEach(section => {
       const element = document.getElementById(section);
       if (element) {
         const rect = element.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
         this.isVisible[section as keyof typeof this.isVisible] = isVisible;
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          current = section;
+        }
       }
     });
+    this.activeSection = current;
   }
 
   scrollToSection(sectionId: string) {
