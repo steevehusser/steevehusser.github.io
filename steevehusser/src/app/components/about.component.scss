@@ -1,0 +1,62 @@
+// About Section
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    padding: 4rem;
+    border-radius: 30px;
+    box-shadow: var(--shadow-warm);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: var(--warm-gradient);
+    }
+
+    .about-paragraph {
+        font-size: 1.2rem;
+        line-height: 2;
+        margin-bottom: 2rem;
+        color: var(--text-warm);
+        font-weight: 500;
+    }
+
+    .about-highlights {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 2rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: var(--shadow-warm);
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-glow);
+            }
+
+            .highlight-icon {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+

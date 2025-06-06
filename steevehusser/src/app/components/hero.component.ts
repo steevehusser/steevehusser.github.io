@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hero.component.html',
+  styleUrl: './hero.component.scss',
   encapsulation: ViewEncapsulation.None
 })
 export class HeroComponent {

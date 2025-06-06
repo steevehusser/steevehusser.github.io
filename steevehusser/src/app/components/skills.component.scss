@@ -1,0 +1,103 @@
+// Skills Section
+.skills-section {
+    background: var(--bg-warm);
+    position: relative;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    position: relative;
+    z-index: 2;
+
+    .skill-card {
+        background: var(--bg-card);
+        backdrop-filter: blur(20px);
+        padding: 3rem 2rem;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: var(--shadow-warm);
+        transition: all 0.4s ease;
+        animation: skillSlideIn 0.8s ease forwards;
+        opacity: 0;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        .skill-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            position: relative;
+
+            .skill-progress {
+                height: 100%;
+                background: var(--warm-gradient);
+                border-radius: 6px;
+                transition: width 2s ease;
+                position: relative;
+                box-shadow: 0 0 20px rgba(245, 87, 108, 0.5);
+            }
+        }
+
+        .skill-level {
+            font-size: 1.1rem;
+            color: var(--text-warm);
+            font-weight: 700;
+            background: var(--warm-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+}
+
+@keyframes skillSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+

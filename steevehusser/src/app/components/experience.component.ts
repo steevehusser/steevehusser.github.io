@@ -12,6 +12,7 @@ export interface Experience {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './experience.component.html',
+  styleUrl: './experience.component.scss',
   encapsulation: ViewEncapsulation.None
 })
 export class ExperienceComponent {

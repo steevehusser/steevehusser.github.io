@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss',
   encapsulation: ViewEncapsulation.None
 })
 export class NavbarComponent {

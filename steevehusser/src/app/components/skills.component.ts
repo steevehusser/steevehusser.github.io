@@ -12,6 +12,7 @@ export interface Skill {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './skills.component.html',
+  styleUrl: './skills.component.scss',
   encapsulation: ViewEncapsulation.None
 })
 export class SkillsComponent {

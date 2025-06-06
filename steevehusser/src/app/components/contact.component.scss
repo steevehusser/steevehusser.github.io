@@ -1,0 +1,162 @@
+// Contact Section
+.contact-section {
+    color: white;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 70% 30%, rgba(102, 126, 234, 0.2) 0%, transparent 50%);
+    }
+
+    .section-title {
+        color: white;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+
+        &::after {
+            background: var(--warm-gradient);
+        }
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: start;
+        position: relative;
+        z-index: 2;
+    }
+
+    .contact-info {
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: var(--warm-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .contact-method {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                background: var(--bg-glass);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                padding: 1.5rem;
+                border-radius: 15px;
+                color: var(--text-dark);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-align: left;
+                font-weight: 600;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                    transform: translateX(10px);
+                    box-shadow: var(--shadow-glow);
+                }
+
+                .method-icon {
+                    font-size: 1.5rem;
+                    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+                }
+            }
+        }
+    }
+
+    .contact-form {
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        padding: 3rem;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: var(--shadow-warm);
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+
+            &::placeholder {
+                color: #718096;
+            }
+
+            &:focus {
+                outline: none;
+                border-color: var(--warm-pink);
+                background: rgba(255, 255, 255, 0.15);
+                box-shadow: 0 0 20px rgba(245, 87, 108, 0.3);
+                transform: translateY(-2px);
+            }
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: var(--warm-gradient);
+            color: white;
+            border: none;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            justify-content: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-pink);
+
+            &:hover {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 20px 60px rgba(245, 87, 108, 0.4);
+            }
+
+            .button-arrow {
+                transition: transform 0.3s ease;
+                font-size: 1.5rem;
+            }
+
+            &:hover .button-arrow {
+                transform: translateX(10px);
+            }
+        }
+    }
+}

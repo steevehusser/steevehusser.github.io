@@ -1,0 +1,70 @@
+// Navigation avec effet glassmorphism
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    .nav-brand {
+        font-size: 1.8rem;
+        font-weight: 800;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2.5rem;
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+
+            &:hover {
+                color: var(--warm-pink);
+                background: var(--bg-glass);
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-pink);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 3px;
+                background: var(--warm-gradient);
+                border-radius: 2px;
+                transition: width 0.3s ease;
+            }
+
+            &:hover::after {
+                width: 80%;
+            }
+        }
+    }
+}
