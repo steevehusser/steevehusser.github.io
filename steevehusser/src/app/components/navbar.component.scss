@@ -25,7 +25,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+        text-shadow: 0 0 30px rgba(66, 153, 225, 0.5);
     }
 
     .nav-links {
@@ -33,7 +33,7 @@
         gap: 2.5rem;
 
         .nav-link {
-            color: var(--text-dark);
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 600;
             cursor: pointer;
@@ -43,10 +43,10 @@
             border-radius: 25px;
 
             &:hover {
-                color: var(--warm-pink);
+                color: var(--accent-blue);
                 background: var(--bg-glass);
                 transform: translateY(-2px);
-                box-shadow: var(--shadow-pink);
+                box-shadow: var(--shadow-focus);
             }
 
             &::after {
@@ -57,7 +57,7 @@
                 transform: translateX(-50%);
                 width: 0;
                 height: 3px;
-                background: var(--warm-gradient);
+                background: var(--tech-gradient);
                 border-radius: 2px;
                 transition: width 0.3s ease;
             }

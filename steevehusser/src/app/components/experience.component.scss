@@ -12,10 +12,10 @@
         top: 0;
         bottom: 0;
         width: 4px;
-        background: var(--warm-gradient);
+        background: var(--tech-gradient);
         transform: translateX(-50%);
         border-radius: 2px;
-        box-shadow: 0 0 20px rgba(245, 87, 108, 0.3);
+        box-shadow: 0 0 20px rgba(66, 153, 225, 0.3);
     }
 
     .timeline-item {
@@ -53,11 +53,11 @@
             top: 0;
             width: 24px;
             height: 24px;
-            background: var(--warm-gradient);
+            background: var(--tech-gradient);
             border-radius: 50%;
             transform: translateX(-50%);
             border: 4px solid white;
-            box-shadow: 0 0 20px rgba(245, 87, 108, 0.5);
+            box-shadow: 0 0 20px rgba(66, 153, 225, 0.5);
             z-index: 2;
             animation: markerPulse 2s ease-in-out infinite;
         }
@@ -67,14 +67,14 @@
             backdrop-filter: blur(20px);
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: var(--shadow-warm);
+            box-shadow: var(--shadow-subtle);
             border: 1px solid rgba(255, 255, 255, 0.3);
             position: relative;
             transition: all 0.3s ease;
 
             &:hover {
                 transform: translateY(-5px);
-                box-shadow: var(--shadow-glow);
+                box-shadow: var(--shadow-focus);
             }
 
             &::before {
@@ -90,7 +90,7 @@
             .timeline-title {
                 font-size: 1.5rem;
                 font-weight: 700;
-                color: var(--text-dark);
+                color: var(--text-primary);
                 margin-bottom: 0.5rem;
                 background: var(--primary-gradient);
                 -webkit-background-clip: text;
@@ -99,7 +99,7 @@
             }
 
             .timeline-period {
-                color: var(--warm-pink);
+                color: var(--accent-blue);
                 font-weight: 600;
                 font-size: 1rem;
                 text-transform: uppercase;
@@ -108,7 +108,7 @@
 
             .timeline-description {
                 margin-top: 1.5rem;
-                color: var(--text-warm);
+                color: var(--text-secondary);
                 line-height: 1.8;
                 font-size: 1.1rem;
             }

@@ -5,6 +5,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from './components/navbar.component';
 import { HeroComponent } from './components/hero.component';
 import { AboutComponent } from './components/about.component';
+import { ServicesComponent } from './components/services.component';
 import { SkillsComponent } from './components/skills.component';
 import { ExperienceComponent } from './components/experience.component';
 import { ProjectsComponent } from './components/projects.component';
@@ -21,6 +22,7 @@ import { FooterComponent } from './components/footer.component';
     NavbarComponent,
     HeroComponent,
     AboutComponent,
+    ServicesComponent,
     SkillsComponent,
     ExperienceComponent,
     ProjectsComponent,
@@ -66,6 +68,7 @@ export class AppComponent implements OnInit {
   // Animation states
   isVisible = {
     about: false,
+    services: false,
     skills: false,
     experience: false,
     projects: false,
@@ -94,7 +97,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    const sections = ['about', 'skills', 'experience', 'projects', 'contact'];
+    const sections = ['about', 'services', 'skills', 'experience', 'projects', 'contact'];
     sections.forEach(section => {
       const element = document.getElementById(section);
       if (element) {

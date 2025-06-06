@@ -6,29 +6,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
 
 
-// Variables globales harmonisées
+// Variables globales harmonisées - Palette sobre
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --warm-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --sunset-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --golden-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    --primary-gradient: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    --subtle-gradient: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+    --tech-gradient: linear-gradient(135deg, #63b3ed 0%, #4299e1 100%);
+    --neutral-gradient: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
 
-    --primary-purple: #667eea;
-    --warm-pink: #f5576c;
-    --warm-orange: #ff8a65;
-    --warm-yellow: #ffb74d;
-    --soft-blue: #64b5f6;
+    --primary-slate: #4a5568;
+    --secondary-gray: #718096;
+    --accent-blue: #4299e1;
+    --subtle-teal: #38b2ac;
+    --soft-indigo: #667eea;
 
-    --text-dark: #2d3748;
-    --text-warm: #4a5568;
-    --text-light: #718096;
-    --bg-warm: #fef5e7;
+    --text-primary: #1a202c;
+    --text-secondary: #2d3748;
+    --text-muted: #4a5568;
+    --bg-neutral: #f8fafc;
     --bg-glass: rgba(255, 255, 255, 0.25);
-    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-card: rgba(255, 255, 255, 0.95);
 
-    --shadow-warm: 0 10px 40px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 40px rgba(102, 126, 234, 0.3);
-    --shadow-pink: 0 10px 40px rgba(245, 87, 108, 0.2);
+    --shadow-subtle: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --shadow-focus: 0 0 40px rgba(66, 153, 225, 0.2);
+    --shadow-elevated: 0 20px 60px rgba(0, 0, 0, 0.1);
 
     --border-radius-sm: 10px;
     --border-radius-md: 20px;
@@ -50,8 +50,8 @@ body {
     height: 100%;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--bg-white);
+    color: var(--text-primary);
+    background-color: var(--bg-neutral);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

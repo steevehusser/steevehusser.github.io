@@ -33,7 +33,7 @@
             padding: 4rem 3rem;
             border-radius: 30px;
             text-align: center;
-            box-shadow: var(--shadow-warm);
+            box-shadow: var(--shadow-subtle);
             max-width: 700px;
             position: relative;
             overflow: hidden;
@@ -52,7 +52,7 @@
                 left: 0;
                 right: 0;
                 height: 6px;
-                background: var(--warm-gradient);
+                background: var(--tech-gradient);
             }
 
             .card-icon {
@@ -77,7 +77,7 @@
             p {
                 font-size: 1.2rem;
                 line-height: 1.8;
-                color: var(--text-warm);
+                color: var(--text-secondary);
                 margin-bottom: 3rem;
                 font-weight: 500;
             }
@@ -92,7 +92,7 @@
                 .project-tag {
                     background: var(--bg-glass);
                     backdrop-filter: blur(20px);
-                    color: var(--text-dark);
+                    color: var(--text-primary);
                     padding: 0.8rem 1.5rem;
                     border-radius: 25px;
                     font-size: 1rem;
@@ -101,7 +101,7 @@
                     transition: all 0.3s ease;
 
                     &:hover {
-                        background: var(--warm-gradient);
+                        background: var(--tech-gradient);
                         color: white;
                         transform: translateY(-3px);
                     }
@@ -109,7 +109,7 @@
             }
 
             .project-cta {
-                background: var(--warm-gradient);
+                background: var(--tech-gradient);
                 color: white;
                 border: none;
                 padding: 1.5rem 3rem;
@@ -120,11 +120,11 @@
                 transition: all 0.3s ease;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                box-shadow: var(--shadow-pink);
+                box-shadow: var(--shadow-focus);
 
                 &:hover {
                     transform: translateY(-5px) scale(1.05);
-                    box-shadow: 0 20px 60px rgba(245, 87, 108, 0.4);
+                    box-shadow: 0 20px 60px rgba(66, 153, 225, 0.4);
                 }
             }
         }
@@ -142,4 +142,3 @@
         transform: translateY(-15px) rotate(180deg);
     }
 }
-

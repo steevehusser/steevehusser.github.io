@@ -1,0 +1,37 @@
+<section id="services" class="section" [class.visible]="visible">
+    <div class="container">
+        <h2 class="section-title">Services & Tarifs</h2>
+        <p class="section-subtitle">Des solutions web sur mesure pour faire grandir votre entreprise</p>
+
+        <div class="services-grid">
+            <div class="service-card" *ngFor="let service of services"
+                [class.highlight]="service.title === 'Sites Web'">
+                <div class="service-icon">{{ service.icon }}</div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-description">{{ service.description }}</p>
+
+                <div class="service-price" [class.featured]="service.title === 'Sites Web'">
+                    {{ service.price }}
+                </div>
+
+                <ul class="service-features">
+                    <li *ngFor="let feature of service.features" class="feature-item">
+                        <span class="feature-check">✓</span>
+                        {{ feature }}
+                    </li>
+                </ul>
+
+                <button class="service-cta" [class.primary]="service.title === 'Sites Web'">
+                    {{ service.title === 'Sites Web' ? 'Commencer mon projet' : 'En savoir plus' }}
+                </button>
+            </div>
+        </div>
+
+        <div class="pricing-note">
+            <div class="note-icon">💡</div>
+            <p>Tous les projets incluent une consultation gratuite pour définir vos besoins spécifiques.
+                <strong>Devis personnalisé sous 24h</strong>
+            </p>
+        </div>
+    </div>
+</section>

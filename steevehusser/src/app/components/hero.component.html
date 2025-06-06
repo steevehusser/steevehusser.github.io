@@ -10,6 +10,10 @@
       <h1 class="hero-title-sobre">{{ title }}</h1>
       <h2 class="hero-subtitle">Développeur Full Stack</h2>
       <p class="hero-slogan">Passionné par l'innovation, prêt à relever de nouveaux défis</p>
+      <div class="hero-price-highlight">
+        <span class="price-text">Sites web à partir de</span>
+        <span class="price-amount">500 CAD</span>
+      </div>
       <div class="hero-stats">
         <div class="stat-item">
           <span class="stat-number">10+</span>
@@ -24,10 +28,15 @@
           <span class="stat-label">Satisfaction client</span>
         </div>
       </div>
-      <button class="cta-button-neon" (click)="scrollToContact()">
-        Collaborons ensemble
-        <span class="button-arrow">→</span>
-      </button>
+      <div class="hero-cta-buttons">
+        <button class="cta-button-neon primary" (click)="scrollToContact()">
+          Collaborons ensemble
+          <span class="button-arrow">→</span>
+        </button>
+        <button class="cta-button-neon secondary" (click)="scrollToServices()">
+          Voir mes services
+        </button>
+      </div>
     </div>
   </div>
   <div class="hero-particles">

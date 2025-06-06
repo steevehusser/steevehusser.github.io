@@ -13,8 +13,13 @@ export class HeroComponent {
   @Input() title = '';
   @Input() particles: any[] = [];
   @Output() contact = new EventEmitter<void>();
+  @Output() services = new EventEmitter<void>();
 
   scrollToContact() {
     this.contact.emit();
+  }
+
+  scrollToServices() {
+    this.services.emit();
   }
 }
