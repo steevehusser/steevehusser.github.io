@@ -1,0 +1,15 @@
+<section id="skills" class="section skills-section" [class.visible]="visible">
+  <div class="container">
+    <h2 class="section-title">Mes Compétences</h2>
+    <div class="skills-grid">
+      <div class="skill-card" *ngFor="let skill of skills; let i = index" [style.animation-delay.ms]="i * 100">
+        <div class="skill-icon">{{ skill.icon }}</div>
+        <h3 class="skill-name">{{ skill.name }}</h3>
+        <div class="skill-bar">
+          <div class="skill-progress" [style.width.%]="skill.level"></div>
+        </div>
+        <span class="skill-level">{{ skill.level }}%</span>
+      </div>
+    </div>
+  </div>
+</section>
