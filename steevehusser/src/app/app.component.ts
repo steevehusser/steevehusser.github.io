@@ -7,7 +7,6 @@ import { HeroComponent } from './components/hero.component';
 import { AboutComponent } from './components/about.component';
 import { ServicesComponent } from './components/services.component';
 import { SkillsComponent } from './components/skills.component';
-import { ExperienceComponent } from './components/experience.component';
 import { ProjectsComponent } from './components/projects.component';
 import { ContactComponent } from './components/contact.component';
 import { FooterComponent } from './components/footer.component';
@@ -24,7 +23,6 @@ import { FooterComponent } from './components/footer.component';
     AboutComponent,
     ServicesComponent,
     SkillsComponent,
-    ExperienceComponent,
     ProjectsComponent,
     ContactComponent,
     FooterComponent
@@ -46,31 +44,11 @@ export class AppComponent implements OnInit {
     { name: 'Cloud', level: 80, icon: '☁️' }
   ];
 
-  // Experience data
-  experiences = [
-    {
-      title: 'Développeur Full Stack Senior',
-      period: '2019 - Présent',
-      description: 'Développement d\'applications web complexes avec .NET et Angular, gestion de bases de données SQL, encadrement d\'équipes junior.'
-    },
-    {
-      title: 'Développeur .NET',
-      period: '2016 - 2019',
-      description: 'Conception et développement d\'APIs REST, applications desktop et web, optimisation des performances.'
-    },
-    {
-      title: 'Développeur Web',
-      period: '2014 - 2016',
-      description: 'Création de sites web responsives, intégration frontend/backend, maintenance et évolution d\'applications existantes.'
-    }
-  ];
-
   // Animation states - Initialisation avec true pour s'assurer que les sections s'affichent
   isVisible = {
     about: true,
     services: true,
     skills: true,
-    experience: true,
     projects: true,
     contact: true
   };
@@ -100,7 +78,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    const sections = ['about', 'services', 'skills', 'experience', 'projects', 'contact'];
+    const sections = ['about', 'services', 'skills', 'projects', 'contact'];
     sections.forEach(section => {
       const element = document.getElementById(section);
       if (element) {
