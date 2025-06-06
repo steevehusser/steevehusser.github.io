@@ -8,6 +8,7 @@ import { AboutComponent } from './components/about.component';
 import { SkillsComponent } from './components/skills.component';
 import { ExperienceComponent } from './components/experience.component';
 import { ProjectsComponent } from './components/projects.component';
+import { PricingComponent } from './components/pricing.component';
 import { ContactComponent } from './components/contact.component';
 import { FooterComponent } from './components/footer.component';
 
@@ -24,6 +25,7 @@ import { FooterComponent } from './components/footer.component';
     SkillsComponent,
     ExperienceComponent,
     ProjectsComponent,
+    PricingComponent,
     ContactComponent,
     FooterComponent
   ],
@@ -69,6 +71,7 @@ export class AppComponent implements OnInit {
     skills: false,
     experience: false,
     projects: false,
+    pricing: false,
     contact: false
   };
 
@@ -94,7 +97,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    const sections = ['about', 'skills', 'experience', 'projects', 'contact'];
+    const sections = ['about', 'skills', 'experience', 'projects', 'pricing', 'contact'];
     sections.forEach(section => {
       const element = document.getElementById(section);
       if (element) {

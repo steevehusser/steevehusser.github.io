@@ -5,6 +5,7 @@
   <app-skills [skills]="skills" [visible]="isVisible.skills"></app-skills>
   <app-experience [experiences]="experiences" [visible]="isVisible.experience"></app-experience>
   <app-projects [visible]="isVisible.projects" (contact)="scrollToSection('contact')"></app-projects>
+  <app-pricing [visible]="isVisible.pricing" (contact)="scrollToSection('contact')"></app-pricing>
   <app-contact [visible]="isVisible.contact"></app-contact>
   <app-footer [title]="title"></app-footer>
 </div>

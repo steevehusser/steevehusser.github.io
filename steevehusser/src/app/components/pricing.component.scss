@@ -1,0 +1,59 @@
+// Pricing Section
+.pricing-section {
+  position: relative;
+  background: var(--bg-warm);
+
+  .pricing-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    padding: 4rem 3rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-warm);
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: var(--warm-gradient);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin: 0 auto 2rem;
+    box-shadow: var(--shadow-pink);
+  }
+
+  .price-from {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .price-amount {
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  .price-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .pricing-details {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+  }
+}
