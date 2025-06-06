@@ -1,6 +1,15 @@
 <nav class="navbar">
   <div class="nav-brand">{{ title }}</div>
-  <div class="nav-links">
+
+  <!-- Menu hamburger pour mobile -->
+  <div class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation normale + menu mobile -->
+  <div class="nav-links" [class.mobile-open]="isMobileMenuOpen">
     <a (click)="scrollTo('about')" class="nav-link">À propos</a>
     <a (click)="scrollTo('services')" class="nav-link">Services</a>
     <a (click)="scrollTo('skills')" class="nav-link">Compétences</a>
@@ -8,4 +17,7 @@
     <a (click)="scrollTo('projects')" class="nav-link">Projets</a>
     <a (click)="scrollTo('contact')" class="nav-link">Contact</a>
   </div>
+
+  <!-- Overlay pour fermer le menu mobile -->
+  <div class="mobile-overlay" *ngIf="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
 </nav>

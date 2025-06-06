@@ -48,12 +48,15 @@
 html,
 body {
     height: 100%;
+    width: 100%;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-neutral);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 // Smooth scrolling
@@ -65,4 +68,68 @@ html {
 app-root {
     display: block;
     min-height: 100vh;
+    width: 100%;
+}
+
+// Amélioration pour les écrans tactiles
+@media (hover: none) and (pointer: coarse) {
+
+    button,
+    .nav-link,
+    .cta-button-neon {
+        &:hover {
+            transform: none !important;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}
+
+// Amélioration de la lisibilité sur mobile
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 1.3;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+// Fixes pour les petits écrans
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+// Prévention du zoom sur les inputs iOS
+@media screen and (max-width: 768px) {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        font-size: 16px !important;
+    }
 }

@@ -10,10 +10,21 @@ import { CommonModule } from '@angular/common';
   encapsulation: ViewEncapsulation.None
 })
 export class NavbarComponent {
-  @Input() title = '';
+  @Input() title: string = '';
   @Output() navigate = new EventEmitter<string>();
 
-  scrollTo(section: string) {
+  isMobileMenuOpen = false;
+
+  scrollTo(section: string): void {
     this.navigate.emit(section);
+    this.closeMobileMenu(); // Fermer le menu mobile après navigation
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
   }
 }

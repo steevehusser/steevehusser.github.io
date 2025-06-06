@@ -65,14 +65,14 @@ export class AppComponent implements OnInit {
     }
   ];
 
-  // Animation states
+  // Animation states - Initialisation avec true pour s'assurer que les sections s'affichent
   isVisible = {
-    about: false,
-    services: false,
-    skills: false,
-    experience: false,
-    projects: false,
-    contact: false
+    about: true,
+    services: true,
+    skills: true,
+    experience: true,
+    projects: true,
+    contact: true
   };
 
   particles = Array.from({ length: 18 });
@@ -81,7 +81,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.checkVisibility();
+      // Délai pour permettre au DOM de se charger complètement
+      setTimeout(() => {
+        this.checkVisibility();
+      }, 100);
     }
   }
 
@@ -102,8 +105,11 @@ export class AppComponent implements OnInit {
       const element = document.getElementById(section);
       if (element) {
         const rect = element.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
         this.isVisible[section as keyof typeof this.isVisible] = isVisible;
+      } else {
+        // Fallback: si l'élément n'est pas trouvé, le rendre visible
+        this.isVisible[section as keyof typeof this.isVisible] = true;
       }
     });
   }
@@ -118,5 +124,4 @@ export class AppComponent implements OnInit {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
-
 }

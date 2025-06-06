@@ -40,19 +40,17 @@
     width: 100%;
     background: var(--bg-neutral);
     position: relative;
-    overflow-x: hidden;
     padding-top: 80px;
 }
-
-
 
 // Section générique
 .section {
     padding: 6rem 0;
-    opacity: 0;
-    transform: translateY(60px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 1s ease;
     position: relative;
+    width: 100%;
 
     &.visible {
         opacity: 1;
@@ -77,6 +75,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
 }
 
 .section-title {
@@ -104,49 +103,20 @@
     }
 }
 
-
-// Responsive Design amélioré
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-
-        .nav-brand {
-            font-size: 1.5rem;
-        }
-
-        .nav-links {
-            display: none;
-        }
+// Responsive Design amélioré avec breakpoints plus précis
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
     }
 
-    .hero-section {
-        padding: 1rem;
+    .section-title {
+        font-size: 2.8rem;
+    }
+}
 
-        .hero-title-sobre {
-            font-size: 2.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-        }
-
-        .hero-stats {
-            flex-direction: column;
-            gap: 2rem;
-
-            .stat-item {
-                padding: 1.5rem 1rem;
-            }
-        }
-
-        .hero-avatar-halo .avatar-circle-3d {
-            width: 120px;
-            height: 120px;
-
-            .avatar-text-3d {
-                font-size: 2.5rem;
-            }
-        }
+@media (max-width: 768px) {
+    .portfolio-container {
+        padding-top: 70px;
     }
 
     .section {
@@ -159,6 +129,12 @@
 
     .section-title {
         font-size: 2.2rem;
+        margin-bottom: 3rem;
+
+        &::after {
+            width: 80px;
+            height: 4px;
+        }
     }
 
     .about-content {
@@ -167,40 +143,13 @@
         .about-highlights {
             flex-direction: column !important;
             align-items: center;
+            gap: 2rem;
         }
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-
-    .timeline {
-        &::before {
-            left: 30px;
-        }
-
-        .timeline-item {
-
-            &:nth-child(odd) .timeline-content,
-            &:nth-child(even) .timeline-content {
-                margin-left: 80px;
-                margin-right: 0;
-                padding-left: 2rem;
-                padding-right: 2rem;
-                text-align: left;
-
-                &::before {
-                    left: -15px;
-                    border-right: 15px solid var(--bg-card);
-                    border-left: none;
-                }
-            }
-
-            .timeline-marker {
-                left: 30px;
-            }
-        }
     }
 
     .contact-content {
@@ -221,21 +170,32 @@
 
         .project-types {
             justify-content: center;
+            flex-wrap: wrap;
         }
     }
 }
 
 @media (max-width: 480px) {
-    .hero-title-sobre {
-        font-size: 2rem !important;
+    .portfolio-container {
+        padding-top: 60px;
     }
 
-    .hero-subtitle {
-        font-size: 1.1rem !important;
+    .section {
+        padding: 3rem 0;
+    }
+
+    .container {
+        padding: 0 0.8rem;
     }
 
     .section-title {
         font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+
+        &::after {
+            width: 60px;
+            height: 3px;
+        }
     }
 
     .about-content {
@@ -244,22 +204,63 @@
 
     .about-paragraph {
         font-size: 1rem !important;
+        line-height: 1.6;
     }
 
     .skill-card {
         padding: 2rem 1.5rem !important;
-    }
 
-    .timeline-content {
-        padding: 2rem 1.5rem !important;
-
-        .timeline-title {
-            font-size: 1.2rem !important;
+        h3 {
+            font-size: 1.3rem !important;
         }
     }
 
     .contact-form {
         padding: 1.5rem;
+
+        .form-group {
+            margin-bottom: 1.5rem;
+
+            input,
+            textarea {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+        }
+    }
+
+    .project-card {
+        padding: 2.5rem 1.5rem !important;
+
+        h3 {
+            font-size: 1.8rem !important;
+        }
+
+        .project-description {
+            font-size: 0.95rem !important;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .about-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .project-card {
+        padding: 2rem 1rem !important;
     }
 }
 
