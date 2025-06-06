@@ -1,24 +1,37 @@
-import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, HostListener, Inject, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+
+import { NavbarComponent } from './components/navbar.component';
+import { HeroComponent } from './components/hero.component';
+import { AboutComponent } from './components/about.component';
+import { SkillsComponent } from './components/skills.component';
+import { ExperienceComponent } from './components/experience.component';
+import { ProjectsComponent } from './components/projects.component';
+import { ContactComponent } from './components/contact.component';
+import { FooterComponent } from './components/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule],
+  encapsulation: ViewEncapsulation.None,
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    NavbarComponent,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    ExperienceComponent,
+    ProjectsComponent,
+    ContactComponent,
+    FooterComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss' // Vérifiez que c'est bien .scss
+  styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   title = 'Steeve Husser';
-
-  // Contact form
-  contactForm = {
-    name: '',
-    email: '',
-    message: ''
-  };
 
   // Skills data
   skills = [
@@ -103,29 +116,4 @@ export class AppComponent implements OnInit {
     }
   }
 
-  onSubmitContact() {
-    if (this.contactForm.name && this.contactForm.email && this.contactForm.message) {
-      // Simulate form submission
-      alert('Merci pour votre message ! Je vous recontacterai bientôt.');
-      this.contactForm = { name: '', email: '', message: '' };
-    }
-  }
-
-  openLinkedIn() {
-    if (isPlatformBrowser(this.platformId)) {
-      window.open('https://linkedin.com/in/steevehusser', '_blank');
-    }
-  }
-
-  openGitHub() {
-    if (isPlatformBrowser(this.platformId)) {
-      window.open('https://github.com/steevehusser', '_blank');
-    }
-  }
-
-  sendEmail() {
-    if (isPlatformBrowser(this.platformId)) {
-      window.location.href = 'mailto:steeve.husser@email.com';
-    }
-  }
 }
