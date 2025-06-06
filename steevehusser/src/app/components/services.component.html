@@ -1,16 +1,18 @@
 <section id="services" class="section" [class.visible]="visible">
     <div class="container">
-        <h2 class="section-title">Services & Tarifs</h2>
-        <p class="section-subtitle">Des solutions web sur mesure pour faire grandir votre entreprise</p>
+        <h2 class="section-title">Services & Solutions Web</h2>
+        <p class="section-subtitle">Des solutions web sur mesure pour développer votre présence digitale et atteindre
+            vos objectifs</p>
 
         <div class="services-grid">
             <div class="service-card" *ngFor="let service of services"
-                [class.highlight]="service.title === 'Sites Web'">
+                [class.highlight]="service.title === 'Sites Web' || service.title === 'Sites E-commerce'">
                 <div class="service-icon">{{ service.icon }}</div>
                 <h3 class="service-title">{{ service.title }}</h3>
                 <p class="service-description">{{ service.description }}</p>
 
-                <div class="service-price" [class.featured]="service.title === 'Sites Web'">
+                <div class="service-price"
+                    [class.featured]="service.title === 'Sites Web' || service.title === 'Sites E-commerce'">
                     {{ service.price }}
                 </div>
 
@@ -21,7 +23,7 @@
                     </li>
                 </ul>
 
-                <button class="service-cta" [class.primary]="service.title === 'Sites Web'">
+                <button class="service-cta" [class.primary]="service.title === 'Sites Web'" (click)="scrollToContact()">
                     {{ service.title === 'Sites Web' ? 'Commencer mon projet' : 'En savoir plus' }}
                 </button>
             </div>

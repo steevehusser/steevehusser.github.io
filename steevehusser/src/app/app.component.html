@@ -3,7 +3,7 @@
   <app-hero [title]="title" [particles]="particles" (contact)="scrollToSection('contact')"
     (services)="scrollToSection('services')"></app-hero>
   <app-about [visible]="isVisible.about"></app-about>
-  <app-services [visible]="isVisible.services"></app-services>
+  <app-services [visible]="isVisible.services" (contact)="scrollToSection('contact')"></app-services>
   <app-skills [skills]="skills" [visible]="isVisible.skills"></app-skills>
   <app-projects [visible]="isVisible.projects" (contact)="scrollToSection('contact')"></app-projects>
   <app-contact [visible]="isVisible.contact"></app-contact>

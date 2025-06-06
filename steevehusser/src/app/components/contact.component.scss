@@ -23,64 +23,13 @@
     }
 
     .contact-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
-        align-items: start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         z-index: 2;
-    }
-
-    .contact-info {
-        h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            background: var(--tech-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-
-        p {
-            color: var(--text-primary);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-
-            .contact-method {
-                display: flex;
-                align-items: center;
-                gap: 1.5rem;
-                background: var(--bg-glass);
-                backdrop-filter: blur(20px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                padding: 1.5rem;
-                border-radius: 15px;
-                color: var(--text-primary);
-                cursor: pointer;
-                transition: all 0.3s ease;
-                text-align: left;
-                font-weight: 600;
-
-                &:hover {
-                    background: rgba(255, 255, 255, 0.2);
-                    transform: translateX(10px);
-                    box-shadow: var(--shadow-focus);
-                }
-
-                .method-icon {
-                    font-size: 1.5rem;
-                    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-                }
-            }
-        }
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     .contact-form {
@@ -90,6 +39,7 @@
         border-radius: 25px;
         border: 1px solid rgba(255, 255, 255, 0.2);
         box-shadow: var(--shadow-subtle);
+        width: 100%;
 
         .form-group {
             margin-bottom: 2rem;
@@ -165,17 +115,7 @@
 @media (max-width: 1024px) {
     .contact-section {
         .contact-content {
-            gap: 3rem;
-        }
-
-        .contact-info {
-            h3 {
-                font-size: 1.8rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
+            max-width: 700px;
         }
 
         .contact-form {
@@ -187,39 +127,10 @@
 @media (max-width: 768px) {
     .contact-section {
         .contact-content {
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info {
-            order: 1;
-
-            h3 {
-                font-size: 1.6rem;
-                text-align: center;
-            }
-
-            p {
-                text-align: center;
-                margin-bottom: 2rem;
-            }
-
-            .contact-methods {
-                gap: 1rem;
-
-                .contact-method {
-                    padding: 1.2rem;
-                    justify-content: center;
-
-                    &:hover {
-                        transform: translateY(-3px);
-                    }
-                }
-            }
+            max-width: 90%;
         }
 
         .contact-form {
-            order: 2;
             padding: 2rem;
 
             .form-input,
@@ -243,34 +154,7 @@
 @media (max-width: 480px) {
     .contact-section {
         .contact-content {
-            gap: 2rem;
-        }
-
-        .contact-info {
-            h3 {
-                font-size: 1.4rem;
-            }
-
-            p {
-                font-size: 0.95rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .contact-methods {
-                .contact-method {
-                    padding: 1rem;
-                    flex-direction: column;
-                    gap: 0.5rem;
-
-                    .method-icon {
-                        font-size: 1.3rem;
-                    }
-
-                    span:last-child {
-                        font-size: 0.9rem;
-                    }
-                }
-            }
+            max-width: 95%;
         }
 
         .contact-form {
@@ -305,18 +189,6 @@
 
 @media (max-width: 320px) {
     .contact-section {
-        .contact-info {
-            .contact-methods {
-                .contact-method {
-                    padding: 0.8rem;
-
-                    span:last-child {
-                        font-size: 0.85rem;
-                    }
-                }
-            }
-        }
-
         .contact-form {
             padding: 1.2rem;
 

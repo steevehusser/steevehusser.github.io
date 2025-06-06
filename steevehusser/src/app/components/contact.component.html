@@ -2,24 +2,6 @@
   <div class="container">
     <h2 class="section-title">Contactez-moi</h2>
     <div class="contact-content">
-      <div class="contact-info">
-        <h3>Parlons de votre projet</h3>
-        <p>N'hésitez pas à me contacter pour discuter de vos besoins ou simplement échanger sur vos idées.</p>
-        <div class="contact-methods">
-          <button class="contact-method" (click)="sendEmail()">
-            <span class="method-icon">📧</span>
-            <span>steeve.husser&#64;email.com</span>
-          </button>
-          <button class="contact-method" (click)="openLinkedIn()">
-            <span class="method-icon">💼</span>
-            <span>LinkedIn</span>
-          </button>
-          <button class="contact-method" (click)="openGitHub()">
-            <span class="method-icon">🐙</span>
-            <span>GitHub</span>
-          </button>
-        </div>
-      </div>
       <form class="contact-form" (ngSubmit)="onSubmitContact()">
         <div class="form-group">
           <input type="text" [(ngModel)]="contactForm.name" name="name" placeholder="Votre nom" required

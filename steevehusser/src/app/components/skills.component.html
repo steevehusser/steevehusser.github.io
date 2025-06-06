@@ -5,10 +5,9 @@
       <div class="skill-card" *ngFor="let skill of skills; let i = index" [style.animation-delay.ms]="i * 100">
         <div class="skill-icon">{{ skill.icon }}</div>
         <h3 class="skill-name">{{ skill.name }}</h3>
-        <div class="skill-bar">
-          <div class="skill-progress" [style.width.%]="skill.level"></div>
+        <div class="skill-stars">
+          <span class="star" *ngFor="let star of [1,2,3,4,5]">★</span>
         </div>
-        <span class="skill-level">{{ skill.level }}%</span>
       </div>
     </div>
   </div>

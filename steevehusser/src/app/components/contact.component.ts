@@ -24,16 +24,4 @@ export class ContactComponent {
       this.contactForm = { name: '', email: '', message: '' };
     }
   }
-
-  openLinkedIn() {
-    window.open('https://linkedin.com/in/steevehusser', '_blank');
-  }
-
-  openGitHub() {
-    window.open('https://github.com/steevehusser', '_blank');
-  }
-
-  sendEmail() {
-    window.location.href = 'mailto:steeve.husser@email.com';
-  }
 }
