@@ -94,9 +94,20 @@
             letter-spacing: 1px;
             box-shadow: var(--shadow-focus);
 
-            &:hover {
+            &:hover:not(:disabled) {
                 transform: translateY(-5px) scale(1.02);
                 box-shadow: 0 20px 60px rgba(66, 153, 225, 0.4);
+            }
+
+            &:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+                transform: none;
+            }
+
+            &.loading {
+                background: var(--bg-glass);
+                color: var(--text-primary);
             }
 
             .button-arrow {
@@ -104,11 +115,75 @@
                 font-size: 1.5rem;
             }
 
-            &:hover .button-arrow {
+            &:hover:not(:disabled) .button-arrow {
                 transform: translateX(10px);
             }
         }
+
+        // Messages de statut
+        .status-message {
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            animation: slideInDown 0.3s ease-out;
+
+            i {
+                font-size: 1.2rem;
+            }
+
+            &.success-message {
+                background: rgba(72, 187, 120, 0.1);
+                color: #48bb78;
+                border: 1px solid rgba(72, 187, 120, 0.3);
+            }
+
+            &.error-message {
+                background: rgba(245, 101, 101, 0.1);
+                color: #f56565;
+                border: 1px solid rgba(245, 101, 101, 0.3);
+            }
+        }
+
+        // États désactivés des champs
+        .form-input:disabled,
+        .form-textarea:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: rgba(255, 255, 255, 0.05);
+        }
     }
+}
+
+// Animation pour les messages de statut
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Spinner animation
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
 }
 
 // Media queries pour mobile
