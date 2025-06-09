@@ -1,13 +1,13 @@
 <section id="services" class="section" [class.visible]="visible">
     <div class="container">
-        <h2 class="section-title">Services & Solutions Web</h2>
-        <p class="section-subtitle">Des solutions web sur mesure pour développer votre présence digitale et atteindre
-            vos objectifs</p>
+        <h2 class="section-title">Services de Développement Web</h2>
+        <p class="section-subtitle">Solutions web professionnelles sur mesure pour entreprises.
+            Développement avec expertise technique et connaissance du marché local</p>
 
         <div class="services-grid">
-            <div class="service-card" *ngFor="let service of services"
+            <article class="service-card" *ngFor="let service of services"
                 [class.highlight]="service.title === 'Sites Web' || service.title === 'Sites E-commerce'">
-                <div class="service-icon">{{ service.icon }}</div>
+                <div class="service-icon" [attr.aria-label]="'Icône pour ' + service.title">{{ service.icon }}</div>
                 <h3 class="service-title">{{ service.title }}</h3>
                 <p class="service-description">{{ service.description }}</p>
 
@@ -18,21 +18,22 @@
 
                 <ul class="service-features">
                     <li *ngFor="let feature of service.features" class="feature-item">
-                        <span class="feature-check">✓</span>
+                        <span class="feature-check" aria-hidden="true">✓</span>
                         {{ feature }}
                     </li>
                 </ul>
 
-                <button class="service-cta" [class.primary]="service.title === 'Sites Web'" (click)="scrollToContact()">
-                    {{ service.title === 'Sites Web' ? 'Commencer mon projet' : 'En savoir plus' }}
+                <button class="service-cta" [class.primary]="service.title === 'Sites Web'" (click)="scrollToContact()"
+                    [attr.aria-label]="'Commander un ' + service.title">
+                    {{ service.title === 'Sites Web' ? 'Commencer mon projet' : 'En savoir plus sur ce service' }}
                 </button>
-            </div>
+            </article>
         </div>
 
         <div class="pricing-note">
-            <div class="note-icon">💡</div>
+            <div class="note-icon" aria-hidden="true">💡</div>
             <p>Tous les projets incluent une consultation gratuite pour définir vos besoins spécifiques.
-                <strong>Devis personnalisé sous 24h</strong>
+                <strong>Devis personnalisé sous 24h - Service local garanti</strong>
             </p>
         </div>
     </div>
