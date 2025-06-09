@@ -298,14 +298,7 @@ html {
     scroll-behavior: smooth;
 }
 
-// Mode sombre (optionnel)
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-card: rgba(45, 55, 72, 0.9);
-        --text-primary: #f7fafc;
-        --text-secondary: #e2e8f0;
-    }
-}
+
 
 // Print styles
 @media print {
