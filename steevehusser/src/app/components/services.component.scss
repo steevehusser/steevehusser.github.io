@@ -88,11 +88,11 @@
 }
 
 .service-price {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 2rem;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
     border-radius: 12px;
     border: 1px solid rgba(102, 126, 234, 0.2);
@@ -100,10 +100,11 @@
     &.featured {
         background: var(--tech-gradient);
         color: white;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         border: none;
         box-shadow: 0 8px 25px rgba(66, 153, 225, 0.3);
         animation: priceGlow 2s ease-in-out infinite alternate;
+        font-weight: 700;
     }
 }
 
@@ -242,10 +243,10 @@
     }
 
     .service-price {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
 
         &.featured {
-            font-size: 1.6rem;
+            font-size: 1.1rem;
         }
     }
 
@@ -286,11 +287,11 @@
         }
 
         .service-price {
-            font-size: 1.2rem;
-            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            padding: 0.6rem 1rem;
 
             &.featured {
-                font-size: 1.4rem;
+                font-size: 1rem;
             }
         }
 
