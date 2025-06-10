@@ -36,6 +36,88 @@
     --border-radius-xl: 50px;
 }
 
+// Background animé léger
+@keyframes floatingParticles {
+    0% {
+        opacity: 0.4;
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+
+    33% {
+        opacity: 0.8;
+        transform: translateY(-20px) translateX(10px) rotate(120deg);
+    }
+
+    66% {
+        opacity: 0.6;
+        transform: translateY(-10px) translateX(-10px) rotate(240deg);
+    }
+
+    100% {
+        opacity: 0.4;
+        transform: translateY(0px) translateX(0px) rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes subtleGlow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+// Animation réseau liquide
+@keyframes networkFlow {
+    0% {
+        background-position: 0% 0%, 100% 100%, 50% 0%;
+        opacity: 0.3;
+    }
+
+    33% {
+        background-position: 50% 50%, 0% 50%, 100% 25%;
+        opacity: 0.5;
+    }
+
+    66% {
+        background-position: 100% 0%, 50% 0%, 25% 100%;
+        opacity: 0.4;
+    }
+
+    100% {
+        background-position: 0% 0%, 100% 100%, 50% 0%;
+        opacity: 0.3;
+    }
+}
+
 // Reset global amélioré
 *,
 *::before,
@@ -52,11 +134,56 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--bg-neutral);
+    position: relative;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+}
+
+// Background avec réseau liquide
+body {
+    background: #f8fafc;
+    position: relative;
+
+    // Réseau de lignes connectées
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        background-image:
+            linear-gradient(45deg, transparent 48%, rgba(59, 130, 246, 0.1) 49%, rgba(59, 130, 246, 0.1) 51%, transparent 52%),
+            linear-gradient(-45deg, transparent 48%, rgba(147, 197, 253, 0.08) 49%, rgba(147, 197, 253, 0.08) 51%, transparent 52%),
+            linear-gradient(90deg, transparent 48%, rgba(96, 165, 250, 0.06) 49%, rgba(96, 165, 250, 0.06) 51%, transparent 52%);
+        background-size: 80px 80px, 120px 120px, 160px 160px;
+        animation: networkFlow 15s ease-in-out infinite;
+    }
+
+    // Points de connexion du réseau
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        background-image:
+            radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.4) 2px, transparent 3px),
+            radial-gradient(circle at 75% 15%, rgba(147, 197, 253, 0.3) 1.5px, transparent 2.5px),
+            radial-gradient(circle at 85% 75%, rgba(96, 165, 250, 0.4) 2px, transparent 3px),
+            radial-gradient(circle at 25% 85%, rgba(59, 130, 246, 0.3) 1.5px, transparent 2.5px),
+            radial-gradient(circle at 55% 55%, rgba(147, 197, 253, 0.2) 1px, transparent 2px);
+        background-size: 200px 200px, 250px 250px, 180px 180px, 220px 220px, 300px 300px;
+        animation: floatingParticles 20s ease-in-out infinite;
+    }
 }
 
 // Smooth scrolling
@@ -69,6 +196,8 @@ app-root {
     display: block;
     min-height: 100vh;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 // Amélioration pour les écrans tactiles
