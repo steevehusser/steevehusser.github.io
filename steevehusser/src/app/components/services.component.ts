@@ -17,8 +17,8 @@ export class ServicesComponent {
             icon: '🌐',
             title: 'Sites Web',
             description: 'Sites web professionnels et responsifs, conçus pour convertir vos visiteurs en clients',
-            price: 'À partir de 500 CAD',
-            features: ['Design moderne et responsive', 'SEO optimisé', 'Performance maximale', 'Hébergement inclus', 'Support technique']
+            price: 'À partir de 499 $',
+            features: ['Design moderne et responsive', 'SEO optimisé', 'Performance maximale', 'Support technique']
         },
         {
             icon: '📱',
@@ -31,7 +31,7 @@ export class ServicesComponent {
             icon: '🔧',
             title: 'Maintenance',
             description: 'Support et maintenance continue pour garder votre site à jour et sécurisé',
-            price: 'À partir de 100 CAD/mois',
+            price: 'Sur devis',
             features: ['Mises à jour régulières', 'Monitoring 24/7', 'Backups automatiques', 'Support prioritaire']
         }
     ];
