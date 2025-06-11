@@ -17,7 +17,7 @@ export class ServicesComponent {
             icon: '🌐',
             title: 'Sites Web',
             description: 'Sites web professionnels et responsifs, conçus pour convertir vos visiteurs en clients',
-            price: 'À partir de 499 $',
+            price: 'À partir de 599 $',
             features: ['Design moderne et responsive', 'SEO optimisé', 'Performance maximale', 'Support technique']
         },
         {
