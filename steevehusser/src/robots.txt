@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://steevehusserhub.io/sitemap.xml 
+Sitemap: https://steevehusser.com/sitemap.xml 
